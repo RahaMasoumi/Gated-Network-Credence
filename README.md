@@ -37,7 +37,7 @@ installation or package setup is needed beyond the dependencies below.
 | Script | Figure |
 | --- | --- |
 | `fig01_phase_diagram.py` | Fig. 1(a)② — consensus/fragmentation phase diagram |
-| `TODO` | Fig. 1(b–c) — belief trajectories at `p_s = 0` and `p_s = 1` |
+| `fig01bc_S2_trajectories` | Fig. 1(b–c), Fig. S2 — belief trajectories at `p_s = 0` and `p_s = 1` |
 | `TODO` | Fig. 2 — `Δb*` across the threshold plane |
 | `TODO` | Fig. 3(a) — `b*` vs prestige bias |
 | `TODO` | Fig. 3(b) — in-degree retention after filtering |
