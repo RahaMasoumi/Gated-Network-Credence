@@ -1,7 +1,7 @@
 # Regimes of Influence under Trust–Distrust Gating
 
 <!-- Paste the Zenodo badge here after your first GitHub release. -->
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/ I should make a DOI wth Zenodo )
 
 Code and data for the paper:
 
@@ -68,10 +68,6 @@ python fig01_phase_diagram.py
 
 All scripts are seeded (`SEED = 42`) and reproduce the published panels as committed.
 
-**Note on runtime:** `fig01_phase_diagram.py` is the most expensive job here. It rebuilds a sparse
-influence matrix over roughly 250,000 directed edges for each of 1,681 threshold cells, once per
-realization. Approximate wall clock: `TODO`. Reduce `N_REAL` or increase the grid step for a fast
-smoke test.
 
 <!-- Time it once and fill the TODO in. Reviewers who see no output for a long
      stretch will assume the script has hung. -->
@@ -128,7 +124,7 @@ positively oriented.
 Raw platform data are not redistributed here. Processed networks and derived trust/distrust
 attributes are included where redistribution is permitted.
 
-<!-- Confirm what the platform's terms allow before committing any data files. -->
+<! -->
 
 ## Citation
 
@@ -139,14 +135,6 @@ attributes are included where redistribution is permitted.
   journal = {TODO},
   year    = {2026},
   doi     = {TODO}
-}
-
-@software{masoumi2026gnc,
-  title     = {Code for "Regimes of Influence under Trust--Distrust Gating"},
-  author    = {Masoumi, Razieh and Biswas, Ahana and Lin, Yu-Ru},
-  year      = {2026},
-  publisher = {Zenodo},
-  doi       = {10.5281/zenodo.XXXXXXX}
 }
 ```
 
