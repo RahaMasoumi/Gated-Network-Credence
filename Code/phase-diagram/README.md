@@ -18,9 +18,6 @@ Requirements: `numpy`, `scipy`, `matplotlib`, and `networkx` (self-tests only).
 
 ## Before anything else
 
-Two commands, about one minute, on the login node. Nothing should be submitted
-until both print `all checks passed`.
-
 ```bash
 python gnc_core.py                # 6 groups of self-tests, ~20 s
 python verify_reproducibility.py  # 15 checks at reduced N, ~40 s
