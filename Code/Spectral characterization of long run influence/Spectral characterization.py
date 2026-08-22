@@ -156,11 +156,7 @@ RIBBON_LIGHTEN    = 0.55
 RIBBON_N_STD      = 1.0
 
 # ---- Panel headings -------------------------------------------------------
-# NOTE: the submitted Fig. 4 image reads "Friction-averse (F)", but the
-# caption says "Friction-averse (F)" twice, and so does the rest of the paper.
-# Pick one and keep it consistent; "Friction-averse" is the coherent reading.
 BLOCK_TITLES = ["Evaluative (E)", "Friction-averse (F)"]
-# BLOCK_TITLES = ["Evaluative (E)", "Friction-averse (F)"]
 
 RHO_TITLE_DY   = 0.30   # inches above the panel top for the rho sub-titles
 BLOCK_TITLE_DY = 0.66   # inches above the panel top for the regime titles
