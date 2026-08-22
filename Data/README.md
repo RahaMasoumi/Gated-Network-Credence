@@ -7,8 +7,8 @@ the properties a downstream analysis can rely on.
 
 | Dataset | Nodes | Edges | Node attributes | Link attribute |
 | --- | --- | --- | --- | --- |
-| A — U.S. State Legislators' Follow Network | 3,152 | 107,785 | party, belief | trust, distrust |
-| B — Bitcoin OTC Signed Trust Network | 5,881 | 76,614 | two community labelings | signed rating |
+| A — U.S. State Legislators' Follow Network |
+| B — Bitcoin OTC Signed Trust Network | 
 
 ---
 
