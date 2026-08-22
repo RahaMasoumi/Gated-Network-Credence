@@ -15,7 +15,6 @@ plot_trends.py          all five figures — one script, three layouts
 consensus_report.py     diagnostics: where the filtered graph has one reach
 run_trends.sbatch       SLURM array covering every panel
 plot_all_trends.sh      produces all five figures at once
-README.md         audit of the earlier per-topology scripts
 ```
 
 Requirements: `numpy`, `scipy`, `networkx`, `matplotlib`.
@@ -86,10 +85,6 @@ prestige scores η are each drawn once, from independent sub-streams of
 - moving along **x** changes only b(0), through the seeding rule;
 - moving along **ρ** reuses the same τ and ε wherever the rejection step
   accepts them.
-
-This is what Methods 4.3.6 means by reusing the same networks and initial belief
-configurations across parameter combinations. An independent trust draw per
-(ρ, p_s, x) would add scatter unrelated to the mechanism.
 
 ---
 
