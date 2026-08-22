@@ -276,6 +276,3 @@ Treat `Bitcoin-OTC-trust_threshold-with-both-community-labels-scaled.csv` as the
 artifact, and recover the observed network with `Sign != 0` when a result should not
 depend on the placeholders — 54% of the edges are neutral.
 
-Even after augmentation, 9 sink components survive the loose gate, so a sink-resolution
-step of the kind used for Dataset A is still needed before out-Laplacian dynamics can
-reach a single consensus.
