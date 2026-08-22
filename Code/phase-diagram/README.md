@@ -204,7 +204,7 @@ realization id twice. A partially failed array cannot silently produce a figure.
 
 
 
-## Two conventions to state in the captions
+## Two conventions
 
 **Where the phase boundary sits.** `consensus_fraction.npy` is a fraction in
 [0, 1] and the drawn boundary is its 0.5 level. Figure 2 masks a cell as
