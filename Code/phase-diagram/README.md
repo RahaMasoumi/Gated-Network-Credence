@@ -1,4 +1,4 @@
-# Regimes of Influence under Trust–Distrust Gating — simulation code
+# Regimes of Influence under Trust–Distrust Gating — simulation code for Figures 1(a)②, 2 , S8
 
 
 ```
