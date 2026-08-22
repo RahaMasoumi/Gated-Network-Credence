@@ -5,8 +5,8 @@ directed link carries a trust and a distrust weight. Each dataset is documented
 separately below: the source data it comes from, the preprocessing applied to it, and
 the properties a downstream analysis can rely on.
 
-| Dataset | Nodes | Edges | Node attributes | Link attribute |
-| --- | --- | --- | --- | --- |
+| Dataset | 
+| --- | 
 | A — U.S. State Legislators' Follow Network |
 | B — Bitcoin OTC Signed Trust Network | 
 
