@@ -1,4 +1,4 @@
-# Empirical Networks for Trust–Distrust Opinion Dynamics
+# Gated Network Credence--Empirical Networks
 
 Two empirical signed networks prepared for opinion-dynamics simulations in which every
 directed link carries a trust and a distrust weight. Each dataset is documented
