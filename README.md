@@ -8,7 +8,7 @@ Code and data for the paper:
 > Razieh Masoumi, Ahana Biswas and Yu-Ru Lin,
 > *"Regimes of Influence under Trust–Distrust Gating"* (2026).
 > School of Computing and Information, University of Pittsburgh.
-
+> Preprint: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/2606.24095)
 ---
 
 ## Contents
