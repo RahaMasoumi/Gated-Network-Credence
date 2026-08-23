@@ -1,1 +1,20 @@
+\section*{Data availability}
+The Bitcoin-OTC reputation network analyzed in this study is publicly
+available~\cite{kumar2016}. The U.S.\ state-legislator follow network was
+constructed from the political-elite dataset described in prior
+work~\cite{biswas2025political,biswas2026attention}. Raw platform data are not
+redistributed. The processed networks, the derived trust and distrust
+attributes, and the preprocessing notebooks that regenerate them from the source
+files are archived at Zenodo, DOI \texttt{10.5281/zenodo.XXXXXXX}, and are also
+available at \url{https://github.com/RahaMasoumi/Gated-Network-Credence}.
+Full schema and provenance documentation accompanies each dataset.
 
+\section*{Code availability}
+The custom code implementing the Gated Network Credence model, the numerical
+integration and the spectral analysis, together with the scripts that reproduce
+every figure reported here, is archived at Zenodo, DOI
+\texttt{10.5281/zenodo.XXXXXXX}, and is available at
+\url{https://github.com/RahaMasoumi/Gated-Network-Credence} under the MIT
+license. The code is written in Python 3.10 and requires
+\texttt{numpy}, \texttt{scipy}, \texttt{networkx} and \texttt{matplotlib}.
+All simulations are seeded and reproduce the published panels.
