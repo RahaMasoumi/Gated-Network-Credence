@@ -184,11 +184,6 @@ trust/distrust attributes are included where redistribution is permitted.
 }
 ```
 
-<!-- TODO: add a CITATION.cff at the repository root. GitHub renders it as a
-     "Cite this repository" button, and Zenodo reads it when minting the DOI. -->
-
----
-
 ## License
 
 MIT License. See [LICENSE](LICENSE).
