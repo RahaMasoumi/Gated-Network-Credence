@@ -1,26 +1,56 @@
 # Regimes of Influence under Trust–Distrust Gating
 
-<!-- Paste the Zenodo badge here after your first GitHub release. -->
-[![DOI](https://zenodo.org/badge/DOI/ I should make a DOI wth Zenodo )
+<!-- Add the Zenodo badge here after the first GitHub release:
+     https://zenodo.org/badge/DOI/<your-doi>.svg -->
 
 Code and data for the paper:
 
-Razieh Masoumi, Ahana Biswas and Yu-Ru Lin, "Regimes of Influence under Trust–Distrust Gating" (2026).
-School of Computing and Information, University of Pittsburgh.
+> Razieh Masoumi, Ahana Biswas and Yu-Ru Lin,
+> *"Regimes of Influence under Trust–Distrust Gating"* (2026).
+> School of Computing and Information, University of Pittsburgh.
+
+---
+
+## Contents
+
+```
+Gated-Network-Credence/
+├── Code/                  simulation and analysis code, one folder per analysis
+│   ├── phase-diagram/                                    Fig. 1(a)②, 2, S8
+│   ├── Long-run consensus belief/                         Fig. 3(a), S3–S6
+│   └── Spectral characterization of long run influence/   Fig. 4
+├── Data/                  empirical networks and their preprocessing notebooks
+├── LICENSE                MIT
+└── README.md              this file
+```
+
+Two READMEs sit below this one and carry the detail:
+
+| File | Covers |
+| --- | --- |
+| [`Code/README.md`](Code/README.md) | shared model conventions, figure → folder map, how to run each analysis |
+| [`Data/README.md`](Data/README.md) | both empirical datasets: source, schema, provenance, reproducibility |
+
+Each folder under `Code/` also has its own README with the exact commands,
+SLURM recipes, runtimes and diagnostics for that analysis.
+
+---
 
 ## Model
 
-**Gated Network Credence** represents each directed relationship with a separate trust assessment
-`tau_ij` and distrust assessment `delta_ij`, mapped to a two-dimensional credence space:
+**Gated Network Credence** represents each directed relationship with a separate
+trust assessment `tau_ij` and distrust assessment `delta_ij`, mapped to a
+two-dimensional credence space:
 
 ```
 T_ij = tau_ij - delta_ij          (net trust)
 U_ij = tau_ij + delta_ij - 1      (trust–distrust conflict, "uncertainty")
 ```
 
-Influence from source *j* to receiver *i* is admitted only when `T_ij >= T_T` and `U_ij <= U_T`.
-The surviving ties form an effective influence graph whose directed Laplacian governs the long-run
-belief state. The two thresholds define four regimes:
+Influence from source *j* to receiver *i* is admitted only when `T_ij >= T_T`
+and `U_ij <= U_T`. The surviving ties form an effective influence graph whose
+directed Laplacian governs the long-run belief state. The two thresholds define
+four regimes:
 
 | Regime | Label | `T_T` | `U_T` |
 | --- | --- | --- | --- |
@@ -29,48 +59,69 @@ belief state. The two thresholds define four regimes:
 | Friction-averse | **F** | permissive | selective |
 | Guarded | **G** | selective | selective |
 
-## Contents
+Representative threshold points used throughout the code:
 
-Each script is standalone and reproduces one figure from the paper. Run any of them directly; no
-installation or package setup is needed beyond the dependencies below.
+| Point | `(T_T, U_T)` | Regime |
+| --- | --- | --- |
+| A | (−0.8, 0.8) | Accommodating |
+| E | (0.2, 0.8) | Evaluative |
+| F | (−0.8, 0.0) | Friction-averse |
+| G | (0.0, 0.0) | Guarded (near phase boundary) |
+| B, C, D | (0.8, 0.8), (−0.8, −0.8), (0.8, −0.8) | fragmented corners |
 
-| Script | Figure |
-| --- | --- |
-| `fig01_phase_diagram.py` | Fig. 1(a)② — consensus/fragmentation phase diagram |
-| `fig01bc_S2_trajectories` | Fig. 1(b–c), Fig. S2 — belief trajectories at `p_s = 0` and `p_s = 1` |
-| `TODO` | Fig. 2 — `Δb*` across the threshold plane |
-| `TODO` | Fig. 3(a) — `b*` vs prestige bias |
-| `TODO` | Fig. 3(b) — in-degree retention after filtering |
-| `TODO` | Fig. 4 — spectral long-run influence `γ̄` |
-| `TODO` | Fig. 5 — Bitcoin-OTC reputation network |
-| `TODO` | Fig. 6 — U.S. state-legislator follow network |
+---
 
-Parameters are set in the block at the top of each script. Output goes to a subfolder created on
-first run.
+## Which figure comes from where
+
+| Figure | Folder | Script |
+| --- | --- | --- |
+| Fig. 1(a)② — consensus/fragmentation phase diagram | `Code/phase-diagram/` | `fig01_phase_diagram.py` |
+| Fig. 2 — `Δb*` across the threshold plane | `Code/phase-diagram/` | `fig02_delta_b.py` |
+| Fig. S8 — multi-`ρ` `Δb*` panels | `Code/phase-diagram/` | `fig02_panels.py` |
+| Fig. 3(a), S3–S6 — `b*` vs prestige bias | `Code/Long-run consensus belief/` | `run_trends.py`, `plot_trends.py` |
+| Fig. 4 — spectral long-run influence `γ̄` | `Code/Spectral characterization of long run influence/` | `Spectral characterization.py` |
+| Analytic activation thresholds overlaid on `Δb*` | `Code/phase-diagram/` | `plot_threshold_lines.py` |
+
+<!-- TODO — not yet in this repository:
+     Fig. 1(b–c), S2 : belief trajectories at p_s = 0 and p_s = 1
+     Fig. 3(b)       : in-degree retention after filtering
+     Fig. 5          : Bitcoin-OTC reputation network
+     Fig. 6          : U.S. state-legislator follow network
+     Add each as a new folder under Code/ following the same layout. -->
+
+---
 
 ## Requirements
 
 Python 3.10 or newer.
 
-```bash
-pip install -r requirements.txt
-```
-
-<!-- Pin to what you actually ran: pip freeze | grep -iE 'numpy|scipy|matplotlib|networkx' -->
 Core dependencies: `numpy`, `scipy`, `matplotlib`, `networkx`.
-The legislator-network scripts additionally require `node2vec` (or `gensim`).
+The `Data/` preprocessing notebooks additionally require `pandas` and `jupyter`.
 
-## Running
+<!-- TODO: commit a requirements.txt pinned to what was actually run:
+     pip freeze | grep -iE 'numpy|scipy|matplotlib|networkx|pandas' > requirements.txt
+     then replace the list above with:  pip install -r requirements.txt -->
+
+---
+
+## Getting started
+
+Every analysis folder ships `gnc_core.py`, which self-tests when run directly.
+Start there — it is the fastest way to confirm the environment is sound:
 
 ```bash
-python fig01_phase_diagram.py
+cd Code/phase-diagram
+python gnc_core.py                  # ~20 s of self-tests
+python fig01_phase_diagram.py --rho -0.4 --ps 0
 ```
 
-All scripts are seeded (`SEED = 42`) and reproduce the published panels as committed.
+Each folder's README gives the full set of commands, including SLURM recipes for
+the analyses that need a cluster. Output goes to a subfolder created on first run.
 
+All synthetic results are seeded (`BASE_SEED = 20260819`) and reproduce the
+published panels.
 
-<!-- Time it once and fill the TODO in. Reviewers who see no output for a long
-     stretch will assume the script has hung. -->
+---
 
 ## Parameters
 
@@ -84,68 +135,64 @@ All scripts are seeded (`SEED = 42`) and reproduce the published panels as commi
 | `B_max` | initial-belief support, `b_i(0) ~ U(-B_max, B_max)` | 5 |
 | `T_T`, `U_T` | net-trust and uncertainty thresholds | swept over [−1, 1] |
 
-Representative threshold points:
+Network topologies, all `N = 5000`: Erdős–Rényi (`p = 0.01`); Barabási–Albert
+(`m = 25`); modular (two communities of 2500, each BA with `m = 21`, plus random
+cross-community edges giving modularity `Q ≈ 0.33`). Each undirected edge becomes
+two independently evaluated directed relationships, so the effective influence
+graph is generally asymmetric.
 
-| Point | `(T_T, U_T)` | Regime |
-| --- | --- | --- |
-| A | (−0.8, 0.8) | Accommodating |
-| E | (0.2, 0.8) | Evaluative |
-| F | (−0.8, 0.0) | Friction-averse |
-| G | (0.0, 0.0) | Guarded (near phase boundary) |
-| B, C, D | (0.8, 0.8), (−0.8, −0.8), (0.8, −0.8) | fragmented corners |
+Synthetic results average over 100 independent realizations per parameter
+combination; the same 100 networks and initial-belief configurations are reused
+across parameter values. Error bars are ±1 s.d.
 
-Network topologies, all `N = 5000`: Erdős–Rényi (`p = 0.01`); Barabási–Albert (`m = 25`); modular
-(two communities of 2500, each BA with `m = 21`, plus random cross-community edges giving
-modularity `Q ≈ 0.33`). Each undirected edge becomes two independently evaluated directed
-relationships, so the effective influence graph is generally asymmetric.
-
-Synthetic results average over 100 independent realizations per parameter combination; the same 100
-networks and initial-belief configurations are reused across parameter values. Error bars are ±1 s.d.
+---
 
 ## Data
 
-**Bitcoin-OTC reputation network** — 5,881 users, 35,592 directed rating ties. Observed scores in
-[−10, 10] are rescaled to [0, 1] and used as the mean of the edge-specific trust distribution;
-distrust is generated through the trust–distrust coupling, since independent distrust is not
-observed in this dataset.
+Full documentation — schema, provenance, and what is and is not exactly
+reproducible — is in [`Data/README.md`](Data/README.md). In brief:
 
-> S. Kumar, F. Spezzano, V. S. Subrahmanian and C. Faloutsos, "Edge weight prediction in weighted
-> signed networks," *ICDM 2016*, pp. 221–230. https://doi.org/10.1109/ICDM.2016.0033
+**Bitcoin-OTC reputation network** — 5,881 users, 35,592 observed directed rating
+ties. Scores in [−10, 10] are rescaled to [0, 1] and used as the mean of the
+edge-specific trust distribution; distrust is generated through the
+trust–distrust coupling, since independent distrust is not observed here.
 
-Source: https://snap.stanford.edu/data/soc-sign-bitcoin-otc.html <!-- verify this URL resolves -->
+> S. Kumar, F. Spezzano, V. S. Subrahmanian and C. Faloutsos, "Edge weight
+> prediction in weighted signed networks," *ICDM 2016*, pp. 221–230.
+> https://doi.org/10.1109/ICDM.2016.0033
 
-**U.S. state-legislator follow network** — 3,152 accounts, 107,785 directed follow ties on X, from
-the political-elite dataset in Biswas et al. (2025) and Biswas & Lin (2026). Trust is
-operationalized as structural affinity (cosine similarity between node2vec embeddings of the full
-directed follower graph); distrust as ideological divergence in audience composition. Initial
-beliefs derive from Shor–McCarty ideology scores, sign reversed so the larger seeded community is
-positively oriented.
+Source: https://snap.stanford.edu/data/soc-sign-bitcoin-otc.html
 
-Raw platform data are not redistributed here. Processed networks and derived trust/distrust
-attributes are included where redistribution is permitted.
+**U.S. state-legislator follow network** — 3,152 accounts, 107,785 directed
+follow ties on X, from the political-elite dataset in Biswas et al. (2025) and
+Biswas & Lin (2026). Trust is operationalized as structural affinity (cosine
+similarity between node2vec embeddings of the full directed follower graph);
+distrust as ideological divergence in audience composition. Initial beliefs
+derive from Shor–McCarty ideology scores, sign reversed so the larger seeded
+community is positively oriented.
 
-<! -->
+Raw platform data are not redistributed here. Processed networks and derived
+trust/distrust attributes are included where redistribution is permitted.
 
-## Citation
+---
 
-```bibtex
-@article{masoumi2026gated,
-  title   = {Regimes of Influence under Trust--Distrust Gating},
-  author  = {Masoumi, Razieh and Biswas, Ahana and Lin, Yu-Ru},
-  journal = {TODO},
-  year    = {2026},
-  doi     = {TODO}
+@unpublished{masoumi2026gated,
+  title  = {Regimes of Influence under Trust--Distrust Gating},
+  author = {Masoumi, Razieh and Biswas, Ahana and Lin, Yu-Ru},
+  year   = {2026},
+  note   = {Working paper}
 }
 ```
 
-`CITATION.cff` is included; GitHub renders it as a "Cite this repository" button and Zenodo reads it
-when minting the DOI.
+<!-- TODO: add a CITATION.cff at the repository root. GitHub renders it as a
+     "Cite this repository" button, and Zenodo reads it when minting the DOI. -->
+
+---
 
 ## License
 
-MIT License. See [LICENSE](LICENSE). <!-- Zenodo requires a LICENSE file before archiving. -->
+MIT License. See [LICENSE](LICENSE).
 
 ## Contact
 
 Please open a GitHub issue, or contact the corresponding author.
-
