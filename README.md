@@ -1,7 +1,6 @@
 # Regimes of Influence under Trust–Distrust Gating
 
-<!-- Add the Zenodo badge here after the first GitHub release:
-     https://zenodo.org/badge/DOI/<your-doi>.svg -->
+[![DOI](https://zenodo.org/badge/1341484743.svg)](https://doi.org/10.5281/zenodo.22063433)
 
 Code and data for the paper:
 
