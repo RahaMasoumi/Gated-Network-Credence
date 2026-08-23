@@ -186,7 +186,7 @@ trust/distrust attributes are included where redistribution is permitted.
 
 ## License
 
-MIT License. See [LICENSE](LICENSE).
+MIT License. See [LICENSE]([LICENSE](https://github.com/RahaMasoumi/Gated-Network-Credence/blob/main/LICENSE)).
 
 ## Contact
 
