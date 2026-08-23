@@ -1,7 +1,7 @@
 # Gated Network Credence — Code
 
 Simulation and analysis code for *"Regimes of Influence under Trust–Distrust
-Gating"*. One folder per analysis. Each folder is self-contained: it ships its
+Gating"* These scripts reproduce the main findings and figures of the paper. One folder per analysis. Each folder is self-contained: it ships its
 own copy of the model module `gnc_core.py`, so it can be run without reference
 to the others, and each has its own README with the exact commands, SLURM
 recipes, runtimes and diagnostics.
